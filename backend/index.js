@@ -6,6 +6,7 @@ require("dotenv").config();
 const app = express();
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
+const cartRoutes = require("./routes/cartRoutes");
 app.use(cors());
 app.use(express.json());
 const connectDB = require("./config/db");
@@ -13,6 +14,7 @@ connectDB();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/cart", cartRoutes);
 app.get("/", (req, res) => {
   res.send("Shree Kitchen API Running 🚀");
 });
