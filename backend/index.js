@@ -10,6 +10,7 @@ const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const cartRoutes = require("./routes/cartRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
 app.use(cors());
 app.use(express.json());
 const connectDB = require("./config/db");
@@ -20,6 +21,7 @@ app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes);
 
 app.use("/api/orders", orderRoutes);
+app.use("/api/payments", paymentRoutes);
 app.get("/", (req, res) => {
   res.send("Shree Kitchen API Running 🚀");
 });
