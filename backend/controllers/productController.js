@@ -10,8 +10,8 @@ exports.addProduct = async (req, res) => {
         message: "Product image is required",
       });
     }
-    console.log("BODY:", req.body);
-console.log("FILE:", req.file);
+//     console.log("BODY:", req.body);
+// console.log("FILE:", req.file);
 
     const product = await Product.create({
       name: req.body.name,

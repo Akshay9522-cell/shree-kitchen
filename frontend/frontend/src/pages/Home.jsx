@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+    const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -55,9 +57,12 @@ export default function Home() {
             </span>
           </div>
 
-          <button className="w-full mt-4 bg-black text-white py-2 rounded-lg">
-            Add To Cart
-          </button>
+          <button
+  onClick={() => navigate(`/product/${product._id}`)}
+  className="w-full mt-4 bg-black text-white py-2 rounded-lg"
+>
+  View Product
+</button>
         </div>
       </div>
     ))}

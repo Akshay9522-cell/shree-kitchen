@@ -3,11 +3,12 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
-
+import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
 
 function App() {
@@ -25,6 +26,20 @@ function App() {
           path="/product/:id"
           element={<ProductDetails />}
         />
+        <Route
+        path="/login"
+        element={<Login />}
+        />
+
+<Route
+  path="/register"
+  element={<Register />}
+/>
+
+<Route
+  path="/cart"
+  element={<Cart/>}
+/>
       </Routes>
     </BrowserRouter>
   );
