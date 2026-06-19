@@ -92,7 +92,7 @@ export default function Checkout() {
 
             if (verificationTarget.success) {
               alert("Payment Successful 🎉");
-              navigate("/my-orders");
+              navigate("/order-success");
             } else {
               alert("Payment verification failed on server side.");
             }

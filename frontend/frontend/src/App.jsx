@@ -11,6 +11,8 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
 import OrderSuccess from "./pages/OrderSuccess";
+import MyOrders from "./pages/MyOrders";
+
 
 function App() {
   return (
@@ -45,6 +47,15 @@ function App() {
   path="/checkout"
   element={<Checkout />}
 />
+<Route
+  path="/order-success"
+  element={<OrderSuccess />}
+/>
+<Route
+  path="/my-orders"
+  element={<MyOrders />}
+/>
+
 <Route
   path="/order-success"
   element={<OrderSuccess />}
