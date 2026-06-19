@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   getAllProducts,
   deleteProduct,
 } from "../services/adminProductService";
 
 export default function AdminProducts() {
-
+const navigate = useNavigate();
   const [products, setProducts] =
     useState([]);
 
@@ -91,7 +93,25 @@ export default function AdminProducts() {
                 >
                   Delete
                 </button>
+                <Link
+  to="/admin/add-product"
+  className="bg-black text-white px-4 py-2 rounded"
+>
+  Add Product
+</Link>
 
+              </td>
+              <td>
+                <button
+  onClick={() =>
+    navigate(
+      `/admin/edit-product/${p._id}`
+    )
+  }
+  className="bg-blue-500 text-white px-3 py-1 rounded mr-2"
+>
+  Edit
+</button>
               </td>
 
             </tr>

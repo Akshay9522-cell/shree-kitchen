@@ -14,6 +14,8 @@ import OrderSuccess from "./pages/OrderSuccess";
 import MyOrders from "./pages/MyOrders";
 import AdminOrders from "./pages/AdminOrders";
 import AdminProducts from "./pages/AdminProducts";
+import AddProduct from "./pages/AddProduct";
+import EditProduct from "./pages/EditProduct";
 
 
 function App() {
@@ -71,6 +73,14 @@ function App() {
   element={
     <AdminProducts />
   }
+/>
+<Route
+  path="/admin/add-product"
+  element={<AddProduct />}
+/>
+<Route
+  path="/admin/edit-product/:id"
+  element={<EditProduct />}
 />
 
       </Routes>
