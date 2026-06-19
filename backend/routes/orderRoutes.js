@@ -6,6 +6,7 @@ const {
   placeOrder,
   getMyOrders,
   getAllOrders,
+  updateOrderStatus,
 } = require("../controllers/orderController");
 
 const {
@@ -31,6 +32,12 @@ router.get(
   protect,
   authorize("admin"),
   getAllOrders
+);
+router.put(
+  "/:id/status",
+  protect,
+  authorize("admin"),
+  updateOrderStatus
 );
 
 module.exports = router;

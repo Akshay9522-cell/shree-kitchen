@@ -12,6 +12,7 @@ import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
 import OrderSuccess from "./pages/OrderSuccess";
 import MyOrders from "./pages/MyOrders";
+import AdminOrders from "./pages/AdminOrders";
 
 
 function App() {
@@ -60,6 +61,11 @@ function App() {
   path="/order-success"
   element={<OrderSuccess />}
 />
+<Route
+  path="/adminorders"
+  element={<AdminOrders />}
+/>
+
       </Routes>
     </BrowserRouter>
   );
