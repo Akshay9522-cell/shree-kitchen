@@ -13,13 +13,24 @@ exports.addProduct = async (req, res) => {
 //     console.log("BODY:", req.body);
 // console.log("FILE:", req.file);
 
-    const product = await Product.create({
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price,
-      image: req.file.path, // Cloudinary URL
-    });
-
+    // const product = await Product.create({
+    //   name: req.body.name,
+    //   description: req.body.description,
+    //   price: req.body.price,
+    //   image: req.file.path, // Cloudinary URL
+    // });
+const product = await Product.create({
+  name: req.body.name,
+  description: req.body.description,
+  price: req.body.price,
+  originalPrice: req.body.originalPrice,
+  category: req.body.category,
+  stock: req.body.stock,
+  capacity: req.body.capacity,
+  material: req.body.material,
+  featured: req.body.featured,
+  image: req.file.path,
+});
     res.status(201).json({
       success: true,
       message: "Product added successfully",

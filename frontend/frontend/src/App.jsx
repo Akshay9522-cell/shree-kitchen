@@ -13,6 +13,7 @@ import ProductDetails from "./pages/ProductDetails";
 import OrderSuccess from "./pages/OrderSuccess";
 import MyOrders from "./pages/MyOrders";
 import AdminOrders from "./pages/AdminOrders";
+import AdminProducts from "./pages/AdminProducts";
 
 
 function App() {
@@ -64,6 +65,12 @@ function App() {
 <Route
   path="/adminorders"
   element={<AdminOrders />}
+/>
+<Route
+  path="/admin/products"
+  element={
+    <AdminProducts />
+  }
 />
 
       </Routes>

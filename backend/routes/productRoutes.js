@@ -35,6 +35,7 @@ router.put(
   "/:id",
   protect,
   authorize("admin"),
+  upload.single("image"),
   updateProduct
 );
 
