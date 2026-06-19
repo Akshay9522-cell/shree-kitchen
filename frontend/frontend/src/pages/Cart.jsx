@@ -3,8 +3,10 @@ console.log(removeCartItem);
 import { useEffect, useState } from "react";
 import { getCart } from "../services/cartService";
 import { updateCartItem, removeCartItem } from "../services/cartService";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
+    const navigate = useNavigate();
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -119,35 +121,29 @@ const handleRemove = async (
                 <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-100">
                   <div className="flex items-center text-sm font-medium text-gray-600">
                     <span className="mr-2">Qty:</span>
-                    <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-md font-semibold">
-                      <button
-      onClick={() =>
-        handleDecrease(item)
-      }
-      className="bg-gray-200 px-3 py-1 rounded"
-    >
-      -
-    </button>
+                   <div className="flex items-center gap-2">
+  <button
+    onClick={() => handleDecrease(item)}
+    className="bg-gray-200 px-3 py-1 rounded"
+  >
+    -
+  </button>
 
-    <span>
-      {item.quantity}
-    </span>
+  <span className="font-bold">
+    {item.quantity}
+  </span>
 
-    <button
-      onClick={() =>
-        handleIncrease(item)
-      }
-      className="bg-gray-200 px-3 py-1 rounded"
-    >
-      +
-    </button>
-
-   
-                    </span>
+  <button
+    onClick={() => handleIncrease(item)}
+    className="bg-gray-200 px-3 py-1 rounded"
+  >
+    +
+  </button>
+</div>
                   </div>
                   
                   {/* Optional: Placeholder for a remove button to make it look standard */}
-                  <button className="text-sm font-medium text-red-500 hover:text-red-700 transition"
+                  <button 
                   onClick={() =>
         handleRemove(item)
       }
@@ -184,9 +180,12 @@ const handleRemove = async (
             </div>
           </div>
 
-          <button className="w-full mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 shadow-sm hover:shadow">
-            Proceed to Checkout
-          </button>
+         <button
+  onClick={() => navigate("/checkout")}
+  className="w-full mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 shadow-sm hover:shadow"
+>
+  Proceed to Checkout
+</button>
         </div>
       </div>
     </div>

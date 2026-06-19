@@ -5,9 +5,14 @@ exports.placeOrder = async (req, res) => {
   try {
     const { shippingAddress, paymentMethod } = req.body;
 
+    //  console.log("BODY:", req.body);
+    // console.log("USER:", req.user);
+
     const cart = await Cart.findOne({
       user: req.user._id,
     }).populate("items.product");
+
+  // console.log("CART:", JSON.stringify(cart, null, 2));
 
     if (!cart || cart.items.length === 0) {
       return res.status(400).json({

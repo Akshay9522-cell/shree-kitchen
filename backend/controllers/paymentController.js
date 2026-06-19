@@ -34,9 +34,9 @@ exports.createPaymentOrder = async (req, res) => {
         message: "Order is already paid",
       });
     }
-
+console.log("TOTAL AMOUNT:", order.totalAmount);
     const options = {
-      amount: Math.round(order.totalAmount), // Convert ₹ to paise
+      amount: Math.round(order.totalAmount *100), // Convert ₹ to paise
       currency: "INR",
       receipt: `receipt_${order._id}`,
     };
