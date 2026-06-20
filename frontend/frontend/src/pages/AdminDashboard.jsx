@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { getDashboardStats } from "../services/adminService";
+import SalesChart from "../components/SalesCharts";
+import RecentOrders from "./RecentOrder";
+import TopProduct from "./TopProduct";
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState({
@@ -136,6 +139,9 @@ export default function AdminDashboard() {
             <span className="text-indigo-600">₹{stats.totalRevenue.toLocaleString("en-IN")}</span>
           </div>
         </div>
+        <SalesChart />
+        <RecentOrders/>
+        <TopProduct/>
       </div>
     </div>
   );
