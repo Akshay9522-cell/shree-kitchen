@@ -3,6 +3,7 @@ import { getDashboardStats } from "../services/adminService";
 import SalesChart from "../components/SalesCharts";
 import RecentOrders from "./RecentOrder";
 import TopProduct from "./TopProduct";
+import LowStockAlert from "../pages/LowStockAlert";
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState({
@@ -143,6 +144,9 @@ export default function AdminDashboard() {
         <RecentOrders/>
         <TopProduct/>
       </div>
+      <div className="mt-6">
+  <LowStockAlert />
+</div>
     </div>
   );
 }

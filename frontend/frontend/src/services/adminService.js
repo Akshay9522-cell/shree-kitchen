@@ -35,4 +35,9 @@ export const updateOrderStatus = (
       "/admin/top-products"
     );
 
+    export const getLowStockProducts =
+  () =>
+    API.get(
+      "/admin/low-stock"
+    );
     

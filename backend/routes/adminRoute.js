@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getDashboardStats,getSalesAnalytics,getRecentOrders,getTopProducts } = require("../controllers/adminController");
+const { getDashboardStats,getSalesAnalytics,getRecentOrders,getTopProducts,getLowStockProducts } = require("../controllers/adminController");
 const {
   protect,
 } = require("../middlewares/authMiddleware");
@@ -40,5 +40,12 @@ router.get(
   protect,
   authorize("admin"),
   getTopProducts
+);
+
+router.get(
+  "/low-stock",
+  protect,
+  authorize("admin"),
+  getLowStockProducts
 );
 module.exports = router;

@@ -243,3 +243,35 @@ exports.getTopProducts = async (
 
   }
 };
+
+exports.getLowStockProducts = async (
+  req,
+  res
+) => {
+  try {
+
+    const products =
+      await Product.find({
+        stock: {
+          $lte: 5
+        },
+        isActive: true
+      })
+      .sort({
+        stock: 1
+      });
+
+    res.json({
+      success: true,
+      products
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+
+  }
+};
