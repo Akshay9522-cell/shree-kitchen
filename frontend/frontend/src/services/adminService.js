@@ -13,3 +13,9 @@ export const updateOrderStatus = (
     `/orders/${id}/status`,
     { orderStatus }
   );
+
+  export const getDashboardStats =
+  () =>
+    API.get(
+      "/admin/dashboard"
+    );
