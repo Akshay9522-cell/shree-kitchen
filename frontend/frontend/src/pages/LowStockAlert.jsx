@@ -22,7 +22,7 @@ export default function LowStockAlert() {
   };
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow">
+    <div className="bg-indigo-900/30 p-6 rounded-xl shadow">
 
       <h2 className="text-xl font-bold mb-4">
         Low Stock Alerts
