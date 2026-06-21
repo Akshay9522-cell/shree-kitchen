@@ -66,16 +66,58 @@ const category = req.query.category
     }
   : {};
 
+ let sortOption = {};
+
+    if (req.query.sort === "low") {
+      sortOption = { price: 1 };
+    }
+
+    if (req.query.sort === "high") {
+      sortOption = { price: -1 };
+    }  
+    const priceFilter =
+  req.query.maxPrice
+    ? {
+        price: {
+          $lte: Number(
+            req.query.maxPrice
+          ),
+        },
+      }
+    : {};
+
+const page = Number(req.query.page) || 1;
+const limit = 8;
+
+const skip = (page - 1) * limit;
+
+const totalProducts =
+  await Product.countDocuments({
+    ...keyword,
+    ...category,
+    ...priceFilter,
+    isActive: true,
+  });
+
+
 const products = await Product.find({
   ...keyword,
   ...category,
+  ...priceFilter,
   isActive: true,
-});
+}).sort(sortOption)
+  .skip(skip)
+  .limit(limit);
+
 
     res.json({
       success: true,
       count: products.length,
       products,
+      currentPage: page,
+      totalPages: Math.ceil(
+        totalProducts / limit
+      ),
     });
 
   } catch (error) {
