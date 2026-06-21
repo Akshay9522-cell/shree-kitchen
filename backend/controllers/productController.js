@@ -50,18 +50,41 @@ const product = await Product.create({
 // Get All Products
 exports.getProducts = async (req, res) => {
   try {
-    const products = await Product.find({ isActive: true });
 
-    res.status(200).json({
+    const keyword = req.query.keyword
+  ? {
+      name: {
+        $regex: req.query.keyword,
+        $options: "i",
+      },
+    }
+  : {};
+
+const category = req.query.category
+  ? {
+      category: req.query.category,
+    }
+  : {};
+
+const products = await Product.find({
+  ...keyword,
+  ...category,
+  isActive: true,
+});
+
+    res.json({
       success: true,
       count: products.length,
       products,
     });
+
   } catch (error) {
+
     res.status(500).json({
       success: false,
       message: error.message,
     });
+
   }
 };
 

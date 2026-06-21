@@ -17,6 +17,10 @@ import AdminProducts from "./pages/AdminProducts";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
 import AdminDashboard from "./pages/AdminDashboard";
+import UserDashboard from "./pages/UserDashboard";
+import Profile from "./pages/Profile";
+import ChangePassword from "./pages/ChangePassword";
+import AccountLayout from "./components/AccountLayout";
 
 
 function App() {
@@ -61,10 +65,7 @@ function App() {
   element={<MyOrders />}
 />
 
-<Route
-  path="/order-success"
-  element={<OrderSuccess />}
-/>
+
 <Route
   path="/adminorders"
   element={<AdminOrders />}
@@ -87,8 +88,29 @@ function App() {
   path="/admin/dashboard"
   element={<AdminDashboard />}
 />
+<Route element={<AccountLayout />}>
 
- 
+  <Route
+    path="/user/dashboard"
+    element={<UserDashboard />}
+  />
+
+  <Route
+    path="user/my-orders"
+    element={<MyOrders />}
+  />
+
+  <Route
+    path="/user/profile"
+    element={<Profile />}
+  />
+
+  <Route
+    path="/user/change-password"
+    element={<ChangePassword />}
+  />
+
+</Route>
       </Routes>
     </BrowserRouter>
   );

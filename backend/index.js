@@ -12,6 +12,7 @@
   const orderRoutes = require("./routes/orderRoutes");
   const paymentRoutes = require("./routes/paymentRoutes");
   const adminRoutes = require("./routes/adminRoute");
+  const userRoutes = require("./routes/userRoute");
   app.use(cors());
   app.use(express.json());
   const connectDB = require("./config/db");
@@ -24,6 +25,7 @@
   app.use("/api/orders", orderRoutes);
   app.use("/api/payments", paymentRoutes);
   app.use("/api/admin",adminRoutes);
+  app.use("/api/user",userRoutes);
   app.get("/", (req, res) => {
     res.send("Shree Kitchen API Running 🚀");
   });
