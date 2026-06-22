@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createProduct } from "../services/adminProductService";
 import { useNavigate } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 export default function AddProduct() {
 
@@ -54,7 +55,7 @@ export default function AddProduct() {
 
       await createProduct(data);
 
-      alert(
+      toast.success(
         "Product Added Successfully"
       );
 
@@ -63,6 +64,7 @@ export default function AddProduct() {
       );
 
     } catch (error) {
+      toast.error("Failed to add product ❌");
       console.log(error);
     }
   };

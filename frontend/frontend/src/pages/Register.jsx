@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import API from "../services/api";
+import { Toaster } from "react-hot-toast";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -27,10 +28,10 @@ export default function Register() {
     try {
       await API.post("/auth/register", formData);
 
-      alert("Registration Successful ✅");
+      toast.success("Registration Successful ✅");
       navigate("/login");
     } catch (error) {
-      alert(
+      toast.error(
         error.response?.data?.message ||
         "Registration Failed"
       );

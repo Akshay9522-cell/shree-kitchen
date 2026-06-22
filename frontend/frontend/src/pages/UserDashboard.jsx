@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getDashboardStats } from "../services/userService";
-
+import { Toaster } from "react-hot-toast";
 export default function UserDashboard() {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);

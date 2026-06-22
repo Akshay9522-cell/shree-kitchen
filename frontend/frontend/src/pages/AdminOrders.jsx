@@ -1,5 +1,5 @@
 // src/pages/AdminOrders.jsx
-
+import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import {
   getAllOrders,
@@ -37,9 +37,7 @@ export default function AdminOrders() {
 
       loadOrders();
 
-      alert(
-        "Order Status Updated ✅"
-      );
+      toast.success("Order Status Updated ✅");
     } catch (error) {
       console.log(error);
     }

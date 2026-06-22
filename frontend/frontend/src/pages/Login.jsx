@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
+import { Toaster } from "react-hot-toast";
 import { AuthContext } from "../context/AuthContext";
 
 export default function Login() {
@@ -31,11 +32,11 @@ export default function Login() {
 
       login(res.data.token);
 
-      alert("Login Successful ✅");
+      toast.success("Login Successful ✅");
 
       navigate("/");
     } catch (error) {
-      alert(
+      toast.error(
         error.response?.data?.message ||
           "Login Failed"
       );

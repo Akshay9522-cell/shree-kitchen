@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { changePassword } from "../services/userService";
+import { Toaster } from "react-hot-toast";
 
 export default function ChangePassword() {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ export default function ChangePassword() {
     e.preventDefault();
 
     if (formData.newPassword !== formData.confirmPassword) {
-      alert("New passwords do not match ❌");
+      toast.error("New passwords do not match ❌");
       return;
     }
 
@@ -37,7 +38,7 @@ export default function ChangePassword() {
         newPassword: formData.newPassword,
       });
 
-      alert(res.data?.message || "Password updated successfully! 🎉");
+      toast.success(res.data?.message || "Password updated successfully! 🎉");
 
       // Reset form on success
       setFormData({
@@ -49,7 +50,7 @@ export default function ChangePassword() {
       setShowNew(false);
       setShowConfirm(false);
     } catch (error) {
-      alert(
+      toast.error(
         error.response?.data?.message || "Something went wrong. Please try again."
       );
     } finally {

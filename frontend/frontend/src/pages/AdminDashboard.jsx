@@ -4,6 +4,7 @@ import SalesChart from "../components/SalesCharts";
 import RecentOrders from "./RecentOrder";
 import TopProduct from "./TopProduct";
 import LowStockAlert from "../pages/LowStockAlert";
+import { Toaster } from "react-hot-toast";
 
 // Premium Icon Asset System
 import { 
@@ -60,7 +61,7 @@ export default function AdminDashboard() {
   };
 
   const handleLogout = () => {
-    console.log("Logging out system profile...");
+    toast.success("Logout Successful ✅");
     // localStorage.clear(); window.location.href = "/login"
   };
 
