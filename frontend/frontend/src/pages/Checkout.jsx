@@ -164,6 +164,7 @@ export default function Checkout() {
 
   return (
     <div className="min-h-screen bg-slate-50/50 py-12 px-4 antialiased flex flex-col justify-center">
+    
       <div className="max-w-xl w-full mx-auto bg-white border border-slate-200/80 rounded-2xl shadow-xl shadow-slate-100 p-6 md:p-10 space-y-8">
         
         {/* Header Summary */}

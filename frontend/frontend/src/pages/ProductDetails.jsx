@@ -68,6 +68,7 @@ export default function ProductDetails() {
   if (!product) {
     return (
       <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-4">
+      
         <div className="max-w-md w-full rounded-2xl bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-8 text-center shadow-2xl">
           <h2 className="text-2xl font-bold text-white mb-2">Item Not Found</h2>
           <p className="text-sm text-slate-400 mb-6">The requested kitchen asset could not be located.</p>

@@ -47,6 +47,7 @@ export default function Cart() {
   if (loading) {
     return (
       <div className="flex flex-col justify-center items-center min-h-[500px] bg-slate-950 text-slate-100">
+      
         <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-indigo-500 mb-4"></div>
         <p className="text-xs text-slate-400 tracking-wide font-medium">Validating Checkout Inventory...</p>
       </div>
