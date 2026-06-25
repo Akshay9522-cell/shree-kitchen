@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { ShoppingBag, ShieldCheck, ArrowLeft, Layers, Sparkles } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 import { addToCart, getCart } from "../services/cartService";
 
 export default function ProductDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -51,6 +52,7 @@ export default function ProductDetails() {
     } catch (error) {
       console.error(error);
       toast.error("Please login first");
+      navigate("/login"); // Redirect to login if not authenticated
     }
   };
 

@@ -5,6 +5,7 @@ import {
   Search, SlidersHorizontal, Sliders, ChevronLeft, ChevronRight, 
   ShoppingBag, Sparkles, Star, ShieldCheck, ArrowRight, Truck, RefreshCw, PhoneCall
 } from "lucide-react";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -86,6 +87,8 @@ export default function Home() {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-slate-50/60 text-slate-800 flex flex-col overflow-x-hidden antialiased">
       
       {/* ─── HERO SECTION (Soft Warm Glow Gradient) ─── */}
@@ -390,5 +393,6 @@ export default function Home() {
       </footer>
 
     </div>
+    </>
   );
 }

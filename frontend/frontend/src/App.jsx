@@ -26,9 +26,10 @@ import AccountLayout from "./components/AccountLayout";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <Routes>
+        <Route element={<Navbar/>}></Route>
         <Route
           path="/"
           element={<Home />}

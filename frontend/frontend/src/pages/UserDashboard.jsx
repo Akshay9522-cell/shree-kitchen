@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { getDashboardStats } from "../services/userService";
 import { Toaster } from "react-hot-toast";
+import Navbar from "../components/Navbar";
 export default function UserDashboard() {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [recentOrders, setRecentOrders] = useState([]);
 
   useEffect(() => {
     fetchDashboard();
@@ -14,6 +16,8 @@ export default function UserDashboard() {
       const res = await getDashboardStats();
 
       setStats(res.data);
+      setRecentOrders(res.data.recentOrders);
+      console.log(res.data.recentOrders)
     } catch (error) {
       console.log(error);
     } finally {
@@ -36,7 +40,8 @@ export default function UserDashboard() {
 
       {/* Heading */}
       <h1 className="text-3xl font-bold mb-8">
-        Welcome Back 👋
+        {`Welcome  👋, ${recentOrders[0]?.shippingAddress?.fullName || "User"}`}
+        
       </h1>
 
       {/* Stats Cards */}
