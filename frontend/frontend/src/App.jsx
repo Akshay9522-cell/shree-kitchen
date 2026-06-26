@@ -71,6 +71,7 @@ function App() {
   path="/adminorders"
   element={<AdminOrders />}
 />
+
 <Route
   path="/admin/products"
   element={

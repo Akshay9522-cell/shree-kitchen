@@ -6,12 +6,15 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState(null); // <-- Add user state
 
+  // --- Admin States ---
+
   // Load user data from localStorage when the app boots up
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
+    
   }, []);
 
   // Accept BOTH token and user profile object on login
