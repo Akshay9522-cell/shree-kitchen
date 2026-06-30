@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../services/api";
+import toast from "react-hot-toast";
 
 export default function EditProduct() {
   const { id } = useParams();
@@ -51,11 +52,11 @@ export default function EditProduct() {
     e.preventDefault();
     try {
       await API.put(`/products/${id}`, formData);
-      alert("Product Updated Successfully 🎉");
+      toast.success("Product Updated Successfully 🎉");
       navigate("/admin/products"); // Adjust this path to wherever your product list lives
     } catch (error) {
       console.error("Error updating product:", error);
-      alert("Failed to update product. Please try again.");
+      toast.error("Failed to update product. Please try again.");
     }
   };
 

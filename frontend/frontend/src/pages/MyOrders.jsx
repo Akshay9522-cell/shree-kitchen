@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
 import { getMyOrders } from "../services/orderService";
 
 export default function MyOrders() {
@@ -66,7 +67,7 @@ export default function MyOrders() {
 
   return (
     <div className="max-w-6xl mx-auto p-6">
-
+  <Navbar/>
       <h1 className="text-4xl font-bold mb-8">
         My Orders
       </h1>
