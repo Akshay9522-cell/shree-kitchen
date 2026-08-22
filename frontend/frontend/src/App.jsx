@@ -21,6 +21,7 @@ import UserDashboard from "./pages/UserDashboard";
 import Profile from "./pages/Profile";
 import ChangePassword from "./pages/ChangePassword";
 import AccountLayout from "./components/AccountLayout";
+import Products from "./pages/Product";
 
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
         <Route
           path="/"
           element={<Home />}
+        />
+          <Route
+          path="/products"
+          element={<Products />}
         />
 
         <Route

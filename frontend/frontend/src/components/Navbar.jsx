@@ -65,6 +65,10 @@ export default function Navbar() {
             <Home className="w-4 h-4 shrink-0" />
             <span className="hidden md:inline">Home</span>
           </Link>
+          <Link to="/products" className="p-1.5 min-[360px]:p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-900/50 transition duration-200 flex items-center gap-1 text-xs min-[360px]:text-sm font-medium">
+            <Home className="w-4 h-4 shrink-0" />
+            <span className="hidden md:inline">Products</span>
+          </Link>
 
           {/* Cart Badge Button Link */}
           <Link to="/cart" className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-900/50 transition duration-200 relative group">

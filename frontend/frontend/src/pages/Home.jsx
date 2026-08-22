@@ -137,7 +137,7 @@ const prevHeroProducts = () => {
         0% { background-position: -400px 0; }
         100% { background-position: 400px 0; }
       }
-      @keyframes skPop {
+      @keyframes skPop {  
         0% { transform: scale(0.85); opacity: 0; }
         60% { transform: scale(1.03); opacity: 1; }
         100% { transform: scale(1); }
