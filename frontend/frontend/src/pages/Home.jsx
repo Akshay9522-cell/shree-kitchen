@@ -181,34 +181,26 @@ const prevHeroProducts = () => {
     <div className="min-h-screen bg-slate-50/60 text-slate-800 flex flex-col overflow-x-hidden antialiased">
       
       {/* ─── HERO SECTION (Soft Warm Glow Gradient) ─── */}
-      <section   className="relative pt-24 pb-20 md:py-32 flex items-center justify-center border-b border-slate-200/60 bg-cover bg-center bg-no-repeat"
-  style={{ backgroundImage: "url('/images/image.png')" }}>
-        {/* Soft atmospheric radial gradients — now gently animated */}
-        <div className="sk-blob-a absolute top-12 left-1/4 w-[500px] h-[500px] rounded-full bg-indigo-200/30 blur-[120px] pointer-events-none" />
-        <div className="sk-blob-b absolute bottom-4 right-1/4 w-[400px] h-[400px] rounded-full bg-amber-200/30 blur-[100px] pointer-events-none" />
+   <section
+  className="relative w-full aspect-[1792/1009] bg-contain bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/images/jew.png')" }}
+>
+  {/* Optional clickable area */}
+  <div className="absolute inset-0" />
 
-        <div className="max-w-4xl mx-auto px-4 text-center z-10 space-y-6">
-          <span className="sk-hero-badge inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-amber-700 bg-amber-100/70 border border-amber-200 px-3.5 py-1.5 rounded-full shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" /> Beautifully Crafted for Modern Kitchens
-          </span>
-          <h1 className="sk-hero-title text-4xl sm:text-6xl md:text-6xl font-extrabold tracking-tight leading-tight text-slate-900">
-            Elevate Your Space With <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-500">
-              Premium Culinary Living
-            </span>
-          </h1>
-          <p className="sk-hero-copy max-w-2xl mx-auto text-sm md:text-base text-slate-500 font-normal leading-relaxed">
-            Discover Shree Kitchen's collection of sleek, hyper-durable storage systems and premium insulated premium flasks. Minimalist designs meeting everyday performance.
-          </p>
-          <div className="sk-hero-cta pt-2">
-            <a href="#shop" className="inline-flex items-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-medium px-8 py-3.5 rounded-xl transition duration-200 shadow-md shadow-slate-950/10 text-sm group hover:shadow-lg hover:shadow-slate-950/20 hover:-translate-y-0.5 active:translate-y-0">
-              Shop Collection
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
-          </div>
-        </div>
-      </section>
-
+  {/* Your button can stay here if you want */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="sk-hero-cta pointer-events-auto">
+      <a
+        href="#shop"
+        className="inline-flex items-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-medium px-8 py-3.5 rounded-xl transition duration-200 shadow-md text-sm group"
+      >
+        Shop Collection
+        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+      </a>
+    </div>
+  </div>
+</section>
 {/* ================= HERO SECTION ================= */}
 <section className="relative w-full bg-[#fdf7f4] overflow-hidden border-b border-slate-100">
 

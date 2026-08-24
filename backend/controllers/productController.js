@@ -19,6 +19,7 @@ exports.addProduct = async (req, res) => {
     //   price: req.body.price,
     //   image: req.file.path, // Cloudinary URL
     // });
+const images = req.files?.map((file) => file.path) || [];
 const product = await Product.create({
   name: req.body.name,
   description: req.body.description,
@@ -29,6 +30,7 @@ const product = await Product.create({
   capacity: req.body.capacity,
   material: req.body.material,
   featured: req.body.featured,
+  //images: images,
   image: req.file.path,
 });
     res.status(201).json({

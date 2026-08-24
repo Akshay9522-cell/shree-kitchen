@@ -139,6 +139,8 @@ export default function AddProduct() {
 
         <input
           type="file"
+          multiple
+          accept="image/*"
           onChange={(e) =>
             setImage(
               e.target.files[0]
@@ -146,6 +148,7 @@ export default function AddProduct() {
           }
           className="w-full"
         />
+        
 
         <button
           className="w-full bg-black text-white py-3 rounded"

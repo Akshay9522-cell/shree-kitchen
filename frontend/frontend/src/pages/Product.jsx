@@ -102,7 +102,7 @@ const Products = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#faf8f5] text-[#2d2926]">
    <Navbar/>
       {/* ================= HEADER ================= */}
 
@@ -112,13 +112,17 @@ const Products = () => {
     backgroundImage: "url('/images/hero1.png')",
   }}
 >
-  {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/45"></div>
 
-  {/* Shiny animated light */}
-  <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute top-0 -left-[150%] h-full w-[80%] bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] animate-shine"></div>
+  <div className="relative  backdrop-blur-md rounded-3xl border border-[#e9dfd2] p-6 mb-10 shadow-[0_15px_50px_rgba(80,60,40,0.06)]">
+  
+  {/* Decorative luxury glow */}
+  <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-[#f4e4c9]/20 blur-3xl pointer-events-none" />
+  
+  <div className="relative z-10">
+    {/* Your existing filter content */}
   </div>
+
+</div>
 
   {/* Content */}
   <div className="relative max-w-7xl mx-auto px-4 py-20 md:py-28 text-center">
@@ -444,7 +448,10 @@ const ProductCard = ({ product }) => {
       : 0;
 
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
+    <div className="group relative bg-white rounded-[1.5rem] overflow-hidden border border-[#eee6dc] 
+shadow-[0_8px_30px_rgba(70,50,30,0.05)]
+hover:shadow-[0_20px_50px_rgba(70,50,30,0.14)]
+hover:-translate-y-1 transition-all duration-500">
 
       {/* Image */}
 
@@ -453,13 +460,13 @@ const ProductCard = ({ product }) => {
         className="block relative overflow-hidden"
       >
 
-        <div className="aspect-square bg-gray-100">
+        <div className="aspect-square bg-[#f7f3ee] overflow-hidden">
 
           <img
             src={product.image}
             alt={product.name}
             loading="lazy"
-            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
           />
 
         </div>
@@ -467,7 +474,7 @@ const ProductCard = ({ product }) => {
         {/* Discount */}
 
         {discount > 0 && (
-          <span className="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-md">
+          <span className="absolute top-4 left-4 bg-[#2d2926] text-[#f6dfb5] text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-full shadow-lg">
             {discount}% OFF
           </span>
         )}
@@ -523,7 +530,8 @@ const ProductCard = ({ product }) => {
 
         <Link
           to={`/product/${product._id}`}
-          className="block text-center mt-4 py-2.5 rounded-xl bg-black text-white text-sm font-semibold hover:bg-gray-800"
+          className="block text-center mt-5 py-3 rounded-xl bg-[#2d2926] text-white text-sm font-semibold tracking-wide
+hover:bg-[#5a4636] hover:shadow-lg transition-all duration-300"
         >
           View Product
         </Link>

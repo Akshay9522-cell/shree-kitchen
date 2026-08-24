@@ -27,7 +27,8 @@ router.post(
   "/",
   protect,
   authorize("admin"),
-  upload.single("image"),
+   upload.single("image"),
+  //upload.array("images", 5), // Allow up to 5 images
   addProduct
 );
 
